@@ -1,0 +1,66 @@
+import java.util.Scanner;
+public class ebob_Ekok {
+    public static void main(String[] args) {
+        int i=1,ebob=1,j=1,ekok=1;
+        Scanner inp= new Scanner(System.in);
+        System.out.print("1. Sayıyı Giriniz :");
+        int n1 = inp.nextInt();
+        System.out.print("2. Sayıyı Giriniz :");
+        int n2 = inp.nextInt();
+        System.out.println("1-EBOB\n2-EKOK");
+        System.out.print("Seçiminiz Nedir? :");
+        int select = inp.nextInt();
+        switch(select) {
+            case 1:
+                if(n1>n2){
+                    while (i<=n1){
+                        if (n1%i==0 && n2%i==0){
+                            System.out.println(i);
+                        }
+                        i++;
+                        ebob=i;
+                    }
+                    System.out.println("====================================");
+                    for (int k=n1;k>=1;k--){
+                        if (n1%k==0 && n2%k==0){
+                            ebob=k;
+                            System.out.println(ebob);
+                            break;
+                        }
+                    }
+                }
+                else if(n1<n2){
+                    while (j<=n2){
+                        if (n1%j==0 && n2%j==0){
+                            System.out.println(j);
+                        }
+                        j++;
+                        ebob=j;
+                    }
+                    System.out.println("====================================");
+                    for (int p=n2;p>=1;p--){
+                        if (n1%p==0 && n2%p==0){
+                            ebob=p;
+                            System.out.println(ebob);
+                            break;
+                        }
+                    }
+                }
+                break;
+        }
+
+        switch(select) {
+            case 2:
+                int b=(n1)*(n2);
+                for (int a=1;a<=b;a++){
+                    if (a % n1 == 0 && a % n2 == 0) {
+
+                        ekok=a;
+                        System.out.println(a);
+                        break;
+                    }
+                }
+                break;
+    }
+    }
+}
